@@ -204,24 +204,20 @@ Hero
   }
 }
 
-/* 
-
-- @MQ min-width 768px T .hero  1( B)& BG url("../images/main.jpeg" ) center/cover no-repeat
-- @MQ min-width 768px T .hero & BG linear-gradient(rgba(44,174,186,0.7 ), rgba(0, 0, 0, 0.7 ) ) ,url("../images/main.jpeg" ) center/cover no-repeat
-
-- @MQ min-width 768px T .hero-banner  (p )& P 0
-
-- @MQ min-width 768px T .hero-banner p ( M)& max-width 45rem
-
-*/
 /*
 =============== 
 About
 ===============
 */
+
 /* section add to globals */
 /* title add to globals */
 /* section center add to globals */
+
+/* 
+
+
+*/
 
 /*
 =============== 
