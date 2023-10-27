@@ -137,6 +137,7 @@ p {
   letter-spacing: var(--spacing);
   display: inline-block;
   /* font-weight: 700; */
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   font-size: 0.875rem;
   border: 2px solid transparent;
@@ -196,8 +197,11 @@ Navbar
   margin: 0 auto;
 }
 .nav-header {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
   padding: 1rem 2rem;
 }
@@ -207,9 +211,11 @@ Navbar
   font-size: 1.5rem;
   color: var(--clr-primary-5);
   cursor: pointer;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 .nav-toggle:hover {
+  -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
 
@@ -219,6 +225,7 @@ Navbar
   text-transform: capitalize;
   letter-spacing: var(--spacing);
   color: var(--clr-grey-1);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   cursor: pointer;
   font-size: 1rem;
@@ -231,25 +238,67 @@ Navbar
 .nav-links {
   height: 0;
   overflow: hidden;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 .show-links {
   height: 280px;
 }
 
+@media screen and (min-width: 992px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  /* hide toggle */
+  .nav-toggle {
+    display: none;
+  }
+  .nav-center {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  .nav-links {
+    height: auto;
+    display: -webkit-box;
+    display: flex;
+  }
+  .nav-link {
+    padding: 0;
+    margin-right: 0.7rem;
+  }
+  .nav-link:hover {
+    padding: 0;
+    background: transparent;
+    color: var(--clr-primary-5);
+  }
+  .nav-icons {
+    display: -webkit-box;
+    display: flex;
+  }
+  .nav-icon {
+    font-size: 1.2rem;
+    color: var(--clr-primary-5);
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+    margin-right: 0.7rem;
+  }
+  .nav-icon:hover {
+    color: var(--clr-primary-8);
+  }
+}
+
 /* 
-> to check height > dev tools > element tabs > select "ul.nav-links" > on the right we can see the dimensions 760 x 280.
-> the height is the 2 value i.e 280
 
-- T .nav-links & H 0
 
-- T .nav-links & overflow hidden & transition --transition
 
-- T .show-link & H 280px
-
-- to check for displaying > dev tools > elements tab > select ul.nav-links and manually add class .show-links
-
-- to check for hiding nav links > dev tools > elements tab > select ul.nav-links and manually remove class .show-links
 */
 
 /*
@@ -261,8 +310,11 @@ Hero
 .hero {
   min-height: 100vh;
   background: var(--clr-primary-5);
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
 }
 .hero-banner {
@@ -293,6 +345,14 @@ Hero
 }
 @media screen and (min-width: 768px) {
   .hero {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(44, 174, 186, 0.7)),
+        to(rgba(0, 0, 0, 0.7))
+      ),
+      url('../images/main.jpeg') center/cover no-repeat;
     background: linear-gradient(rgba(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
       url('../images/main.jpeg') center/cover no-repeat;
   }
@@ -317,13 +377,16 @@ About
 
 @media screen and (min-width: 992px) {
   .about-center {
+    display: -webkit-box;
     display: flex;
     /* background: red; */
+    -webkit-box-pack: justify;
     justify-content: space-between;
     flex-wrap: wrap;
   }
   .about-img,
   .about-info {
+    -webkit-box-flex: 0;
     flex: 0 0 calc(50% - 2rem);
     align-self: center;
     margin: 0;
@@ -378,24 +441,29 @@ Services
 }
 @media screen and (min-width: 576px) {
   .services-center {
+    display: -webkit-box;
     display: flex;
     /* background: red; */
+    -webkit-box-pack: justify;
     justify-content: space-between;
     flex-wrap: wrap;
   }
   .service {
+    -webkit-box-flex: 0;
     flex: 0 0 calc(50% - 1rem);
     margin-bottom: 1rem;
   }
 }
 @media screen and (min-width: 992px) {
   .service {
+    -webkit-box-flex: 0;
     flex: 0 0 calc(33.333% - 1rem);
   }
 }
 
 @media screen and (min-width: 1170px) {
   .service {
+    display: -webkit-box;
     display: flex;
     text-align: left;
   }
@@ -416,6 +484,7 @@ Featured Tours
 ===============
 */
 .tour-card {
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   background: var(--clr-grey-10);
   box-shadow: var(--light-shadow);
@@ -423,6 +492,7 @@ Featured Tours
 }
 .tour-card:hover {
   box-shadow: var(--dark-shadow);
+  -webkit-transform: scale(1.02);
   transform: scale(1.02);
 }
 .tour-img-container {
@@ -430,6 +500,7 @@ Featured Tours
 }
 .tour-img {
   height: 17rem;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .tour-date {
@@ -446,9 +517,12 @@ Featured Tours
   padding: 1.25rem 1.5rem;
 }
 .tour-footer {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
   flex-wrap: wrap;
+  -webkit-box-align: center;
   align-items: center;
 }
 .tour-footer p {
@@ -462,26 +536,32 @@ Featured Tours
 }
 @media screen and (min-width: 768px) {
   .featured-center {
+    display: -webkit-box;
     display: flex;
     /* background: red; */
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
     justify-content: space-between;
   }
   .tour-card {
+    -webkit-box-flex: 0;
     flex: 0 0 calc(50% - 2rem);
   }
 }
 @media screen and (min-width: 1170px) {
   .tour-card {
+    -webkit-box-flex: 0;
     flex: 0 0 calc(33.333% - 2rem);
   }
 }
 /* Extra CSS */
 
 .tour-title {
+  display: -webkit-box;
   display: flex;
   /* background: red; */
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
   justify-content: space-between;
 }
 .tour-title p,
@@ -509,10 +589,12 @@ Contact
   color: var(--clr-primary-8);
 }
 .contact-form {
+  display: -webkit-box;
   display: flex;
   max-width: 28rem;
 }
 .form-control {
+  -webkit-box-flex: 1;
   flex: 1 1 auto;
   color: var(--clr-grey-5);
 }
@@ -527,6 +609,18 @@ Contact
   text-transform: capitalize;
   border: transparent;
 }
+.form-control::-webkit-input-placeholder {
+  color: inherit;
+}
+.form-control::-moz-placeholder {
+  color: inherit;
+}
+.form-control:-ms-input-placeholder {
+  color: inherit;
+}
+.form-control::-ms-input-placeholder {
+  color: inherit;
+}
 .form-control::placeholder {
   color: inherit;
 }
@@ -536,6 +630,7 @@ Contact
   background: var(--clr-primary-8);
   color: var(--clr-primary-1);
   cursor: pointer;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 .btn-submit:hover {
@@ -544,11 +639,14 @@ Contact
 }
 @media screen and (min-width: 992px) {
   .contact-center {
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: justify;
     justify-content: space-between;
     flex-wrap: wrap;
   }
   .contact-form {
+    -webkit-box-flex: 1;
     flex: 1 1 auto;
     align-self: flex-start;
     max-width: 100%;
@@ -571,15 +669,19 @@ Gallery
   top: 50%;
   left: 50%;
   font-size: 2rem;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: var(--clr-white);
   opacity: 0;
   cursor: pointer;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 .gallery-img {
   height: 17rem;
+  -o-object-fit: cover;
   object-fit: cover;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 .gallery-img-container:hover .gallery-img {
@@ -590,16 +692,19 @@ Gallery
 }
 @media screen and (min-width: 768px) {
   .gallery-center {
+    display: -webkit-box;
     display: flex;
     /* background: red; */
     flex-wrap: wrap;
   }
   .gallery-img-container {
+    -webkit-box-flex: 0;
     flex: 0 0 50%;
   }
 }
 @media screen and (min-width: 992px) {
   .gallery-img-container {
+    -webkit-box-flex: 0;
     flex: 0 0 25%;
   }
 }
@@ -617,7 +722,9 @@ Footer
 }
 .footer-links,
 .footer-icons {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
@@ -628,6 +735,7 @@ Footer
   font-size: 1rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 .footer-link:hover {
@@ -637,6 +745,7 @@ Footer
   margin-right: 1rem;
   color: var(--clr-primary-8);
   font-size: 1rem;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 .footer-icon:hover {

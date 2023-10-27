@@ -247,9 +247,57 @@ Navbar
 .show-links {
   height: 280px;
 }
+@media screen and (min-width: 992px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  /* Hide toggle */
+  .nav-toggle {
+    display: none;
+  }
+  .nav-links {
+    height: auto;
+    display: -webkit-box;
+    display: flex;
+  }
+  .nav-center {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+            align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-header {
+    padding: 0 0;
+  }
+  .nav-link {
+    padding: 0;
+    margin-right: 0.7rem;
+  }
+  .nav-link:hover {
+    padding: 0;
+    background: transparent;
+    color: var(--clr-primary-5);
+  }
+  .nav-icons {
+    display: -webkit-box;
+    display: flex;
+  }
+  .nav-icon {
+    font-size: 1.2rem;
+    margin-right: 0.7rem;
+    color: var(--clr-primary-5);
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+  }
+  .nav-icon:hover {
+    color: var(--clr-primary-8);
+  }
+}
 
 /* 
-
 */
 
 /*
@@ -296,13 +344,7 @@ Hero
 }
 @media screen and (min-width: 768px) {
   .hero {
-    background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(44, 174, 196, 0.7)),
-        to(rgba(0, 0, 0, 0.7))
-      ),
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(44, 174, 196, 0.7)), to(rgba(0, 0, 0, 0.7))),
       url('../images/main.jpeg') center/cover no-repeat;
     background: linear-gradient(rgba(44, 174, 196, 0.7), rgba(0, 0, 0, 0.7)),
       url('../images/main.jpeg') center/cover no-repeat;
