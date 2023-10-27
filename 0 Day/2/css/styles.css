@@ -69,14 +69,15 @@ ul {
 a {
   text-decoration: none;
 }
-img {
-  width: 100%;
-  display: block;
-}
-/* img:not(.nav-logo) {
+/* img {
   width: 100%;
   display: block;
 } */
+
+img:not(.nav-logo) {
+  width: 100%;
+  display: block;
+}
 
 h1,
 h2,
@@ -176,6 +177,81 @@ p {
 Navbar
 ===============
 */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  z-index: 2;
+}
+.nav-icons {
+  display: none;
+}
+.nav-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.nav-toggle {
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav-toggle:hover {
+  transform: scale(1.2);
+}
+
+.nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-1);
+  transition: var(--transition);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.nav-link:hover {
+  background: var(--clr-primary-8);
+  color: var(--clr-primary-1);
+  padding-left: 2.25rem;
+}
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 280px;
+}
+
+/* 
+> to check height > dev tools > element tabs > select "ul.nav-links" > on the right we can see the dimensions 760 x 280.
+> the height is the 2 value i.e 280
+
+- T .nav-links & H 0
+
+- T .nav-links & overflow hidden & transition --transition
+
+- T .show-link & H 280px
+
+- to check for displaying > dev tools > elements tab > select ul.nav-links and manually add class .show-links
+
+- to check for hiding nav links > dev tools > elements tab > select ul.nav-links and manually remove class .show-links
+*/
+
 /*
 =============== 
 Hero
